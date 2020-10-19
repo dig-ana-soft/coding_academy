@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/* define global constants, colors etc. */
+/*--------------------------------------*/
+:root {
+    --ypYellow:rgb(245,231,126);
+    --ypBrown: rgb(61,49,28);
+    --ypBlue: rgb(40,59,123);
+    --ypCyan: rgb(201, 235, 253);
+
+    --rightMargin: 3%;
+}
+
+body {
+    background-color: var(--ypYellow);
+    font-family: arial, helvetica, sans-serif;
+    font-size: 1em;
+    text-align: right;
+}
+/* div {
+    border: 3px solid violet;
+
+} */
+
+#wrapper {
+    margin: auto;
+    width: 90%;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    /* grid-template-columns: 200px 500px 300px; */
+}
+#play-btn, #info-box {
+    background-color: var(--ypBrown);
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    border: none;
+}
+#info-box {
+    text-align: center;
+    grid-row: 2;
+    grid-column: 1;
+    z-index: 3;
+}
+#play-btn {
+    grid-column: 3;
+    grid-row: 2;
+}
+#board {
+    grid-column: 2;
+    grid-row: 1/4;
+    margin: 5%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 10px;
+    grid-gap: 10px;
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.2em;
+    max-width: 960px;
+}
+#board div {
+    background: var(--ypCyan);
+    color: var(--ypBrown);
+    padding: 15%;
+}
+
+#banner {
+    visibility: hidden;
+    /* transition-duration: 0.5s; */
+    width: 70%;
+    padding: 20px;
+    background-color: rgb(255, 47, 245);
+    color: white;
+    position: absolute;
+    top: 45%;
+    left: 13%;
+    font-size: 4.5em;
+    text-align: center;
+    transform: rotate(-30deg);
+    font-weight: bold;
+
+    /* animation: wiggle 0.2s ease-in 0s infinite normal none; */
+    animation-name: wiggle;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: scale(1);
+        transform: rotate(-30deg);
+    }
+    50% {
+        transform: scale(1.2);
+        transform: rotate(-32deg);
+    }
+    /* 100% {
+        transform: scale(1.0);
+    } */
+}
+h1, h2 {
+    text-align: center;
+}
